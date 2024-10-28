@@ -1,0 +1,70 @@
+//+ Переменные:
+//+ Цвета:
+$light-color: #fff
+$dark-color: #000
+$main-color-text: #101010
+$supportive-color: #838383
+$title-color: #838383
+$active-color: #FFA542
+$bg-color: #EAEAEA
+
+//+ Базовые стили:
+.title
+    color: $title-color
+    font-size: 20px
+    font-weight: 600
+    margin-bottom: 20px
+
+.section
+    margin-bottom: 50px
+
+.body
+    display: flex
+    flex-direction: column
+
+.main
+    flex: 1 1 auto
+
+//+ empty:
+.empty
+    display: flex
+    flex-direction: column
+    align-items: center
+    min-height: 504px
+    width: 100%
+    max-width: 540px
+    padding: 61px 0 127px 0
+    margin: 0 auto
+    &__text
+        color: $main-color-text
+        font-size: 30px
+        font-weight: 500
+        margin-top: 30px
+    &__subtitle
+        color: $title-color
+        font-size: 20px
+        font-weight: 400
+        text-align: center
+        margin-top: 5px
+    &__link
+        height: 65px
+        width: 100%
+        color: $light-color
+        font-size: 20px
+        font-weight: 600
+        text-align: center
+        transition: .5s
+        
+        background: $main-color-text
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25)
+        border-radius: 20px
+        padding: 20px 0
+        margin-top: 30px
+        &:hover
+            color: $dark-color
+            background-color: $light-color
+            transition: .5s
+@media (max-width: 484px)
+    .empty
+        &__img
+            width: 200px

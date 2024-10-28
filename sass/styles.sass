@@ -1,0 +1,127 @@
+//+ Переменные:
+//+ Цвета:
+$light-color: #fff
+$dark-color: #000
+$main-color-text: #101010
+$supportive-color: #838383
+$title-color: #838383
+$active-color: #FFA542
+$bg-color: #EAEAEA
+
+//+ Базовые стили:
+.title
+    color: $title-color
+    font-size: 20px
+    font-weight: 600
+    margin-bottom: 20px
+
+.section
+    margin-bottom: 50px
+
+.comparison
+    opacity: 1 !important
+
+.discount
+    color: #df6464 !important
+
+.card
+    display: flex
+    justify-content: center
+    gap: 30px
+    flex-wrap: wrap
+
+    font-size: 17px
+    font-weight: 600
+    &__wrapper-card
+        display: flex
+        flex-direction: column
+        min-height: 407px
+        height: 100%
+        max-height: 850px
+        width: 350px
+        background-color: $light-color
+        border-radius: 30px
+        overflow: hidden
+        padding: 25px
+    &__wrapper-img-m
+        margin: 0 auto
+    &__wrapper-img
+        display: flex
+        flex-direction: column
+        justify-content: center
+        height: 237px
+        margin: 0 auto
+    &__img
+        width: 219px
+    &__img-ch
+        height: 292px
+        width: 151px
+    .card__description1
+        text-align: center
+        margin-top: 20px
+    .card__wrapper-description
+        display: flex
+        justify-content: space-between
+        margin-top: 55px
+    .card__wrapper-price
+        color: $active-color
+    .card__price
+        margin-right: 5px
+    .card__old-price
+        justify-self: end
+        opacity: 0
+
+        color: #ffce7f
+        font-size: 13px
+        text-decoration: line-through
+    &__number
+        color: $supportive-color
+        margin: 6px 0 0 33px
+
+//+ banner:
+.banner
+    color: $light-color
+    font-size: clamp(20px, 3vw, 30px)
+    font-weight: 600
+    line-height: 1.2
+    text-align: center
+    margin: 22px 0 44px 0
+    &__wrapper
+        display: flex
+        align-items: center
+        height: clamp(150px, 35vw, 197px)
+        width: 100%
+        background: $main-color-text
+        border-radius: 30px
+        position: relative
+        padding: 61px clamp(20px, 3.5vw, 50px)
+    &__description
+        width: clamp(270px, 45vw, 643px)
+    &__img
+        position: absolute
+        bottom: -20px
+        right: clamp(5px, 8vw, 163px)
+@media (max-width: 700px)
+    .banner
+        &__wrapper
+            padding: 61px 15px
+        &__img
+            right: 0
+@media (max-width: 570px)
+    .banner
+        &__wrapper
+            padding: 31px 0px
+        &__description
+            width: 220px
+        &__img
+            width: 250px
+            right: 0
+            bottom: -14px
+@media (max-width: 439px)
+    .banner
+        &__wrapper
+            padding: 31px 15px
+        &__description
+            width: 100%
+        &__img
+            display: none

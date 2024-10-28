@@ -1,0 +1,253 @@
+//+ Переменные:
+//+ Цвета:
+$light-color: #fff
+$dark-color: #000
+$main-color-text: #101010
+$supportive-color: #838383
+$title-color: #838383
+$active-color: #FFA542
+$bg-color: #EAEAEA
+
+//+ Миксины:
+@mixin link-after
+    content: ''
+    display: block
+    height: 1px
+    width: 0
+    background-color: $dark-color
+    transition: .5s
+
+@mixin link-hover-after
+    content: ''
+    width: 100%
+    
+//+ Базовые стили:
+.body
+    color: $main-color-text
+    background-color: $bg-color
+
+.container
+    height: 100%
+    max-width: 1140px
+    padding: 0 15px
+    margin: 0 auto
+
+.active
+    color: $active-color
+
+.wrapper-img
+    height: 30px
+    width: 85px
+    overflow: hidden
+.img
+    height: 30px
+    width: 85px
+
+//+ header:
+.header
+    height: 60px
+    font-size: 15px
+    font-weight: 500
+    &__wrapper
+        height: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__wrap
+        display: flex
+        column-gap: clamp(30px, 5vw, 65px)
+        align-items: inherit
+    &__choice
+        display: flex
+        align-items: inherit
+        column-gap: 15px
+        cursor: pointer
+    &__icon-down
+        height: 5px
+    &__text
+        position: relative
+    &__text::after
+        content: ''
+        height: 5px
+        width: 8px
+        display: inline-block
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 5L0 1.24978L1.33396 0L4 2.50044L6.66604 0L8 1.24978L4 5Z' fill='%23101010'/%3E%3C/svg%3E%0A")
+        position: absolute
+        top: 5px
+        right: -14px
+    &__wrapper-link
+        display: flex
+        align-items: inherit
+        column-gap: 45px
+    &__wrapper-link-dop2
+        column-gap: 45px
+        display: flex
+    &__wrapper-icon
+        cursor: pointer
+        position: relative
+    &__circle
+        height: 17px
+        width: 17px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 100%
+        background-color: $active-color
+        position: absolute
+        top: -8px
+        right: -10px
+
+        color: $light-color
+        text-align: center
+    &__icon-link
+        height: 23px
+        width: 23px
+    &__wrapper-link-dop
+        display: flex
+        column-gap: inherit
+    &__registration,
+    &__authorization
+        cursor: pointer
+    &__registration::after,
+    &__authorization::after
+        +link-after
+    &__registration:hover::after,
+    &__authorization:hover::after
+        +link-hover-after
+@media (max-width: 767px)
+    .header
+        height: 70px
+        &__wrap
+            flex-direction: column
+            align-items: start
+            gap: 10px
+        &__wrapper-link
+            flex-direction: column-reverse
+        &__wrapper-link-dop2
+            display: flex
+            justify-content: space-between
+            width: 100%
+            margin-bottom: 10px
+@media (max-width: 500px)
+    .header
+        height: 110px
+        &__wrapper-link
+            flex-direction: column-reverse
+        &__wrapper-link-dop2
+            margin-bottom: 15px
+        &__wrapper-link-dop
+            display: flex
+            flex-direction: column
+            gap: 15px
+        &__wrapper-icon1
+            display: none
+
+//+ footer:
+.footer
+    color: $dark-color
+    font-size: 17px
+    font-weight: 400
+    &__wrapper
+        min-height: 150px
+        height: 100%
+        width: 100%
+        display: flex
+        justify-content: start
+        background-color: $light-color
+        border-radius: 30px 30px 0 0
+        padding: 30px
+    &__wrapper-menu
+        display: flex
+        height: 100%
+        column-gap: clamp(35px, 15vw, 175px)
+        margin: 0 auto
+    &__item + .footer__item
+        margin-top: 10px
+    &__link::after
+        +link-after
+    &__link:hover::after
+        +link-hover-after
+    &__conditions
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &__languages
+        display: flex
+        gap: 15px
+    &__language
+        cursor: pointer
+@media (max-width: 570px)
+    .footer
+        &__wrapper
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__wrapper-menu
+            text-align: center
+            flex-direction: column
+            gap: 30px
+            margin-top: 30px
+
+//+ MODAL WINDOW:
+.show
+    display: flex !important
+.modal
+    height: 100vh
+    min-width: 100%
+    display: none
+    align-items: center
+    justify-content: center
+    background: rgba(0, 0, 0, .7)
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1001
+    &__wrapper
+        max-height: 480px
+        width: 280px
+        display: flex
+        justify-content: center
+        background-color: $light-color
+        padding: 35px 10px
+        position: relative
+        z-index: 1005
+    &__wrapper-block
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        row-gap: 30px
+    &__title
+        color: $dark-color
+        font-size: 20px
+        font-weight: 700
+    &__form 
+        display: flex
+        flex-direction: column
+        gap: 30px
+    &__fieldset
+        width: 100%
+        display: flex
+        flex-direction: column-reverse
+        gap: 10px
+        font-size: 16px
+    &__link
+        height: 40px
+        width: 100%
+        color: $light-color
+        background-color: $dark-color
+        font-size: 14px
+        font-weight: 400
+        border-radius: 20px
+        transition: .5s
+        margin: 0 auto
+        &:hover
+            color: $dark-color
+            background-color: $light-color
+            border: 1px solid $dark-color
+            transition: .5s
+    &__input
+        width: 100%
+        border-bottom: 1px solid $dark-color
+        font-size: 20px
