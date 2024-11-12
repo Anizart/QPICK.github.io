@@ -35,11 +35,11 @@
                     <div class="header__wrapper-link-dop2">
                         <a href="#" class="header__wrapper-icon">
                             <img src="../img/svg/header__heart.svg" alt="icon" class="header__icon-link">
-                            <div class="header__circle">2</div>
+                            <div class="header__circle">0</div>
                         </a>
                         <a href="pages/basket.html" class="header__wrapper-icon">
                             <img src="../img/svg/header__cart.svg" alt="icon" class="header__icon-link">
-                            <div class="header__circle">1</div>
+                            <div class="header__circle" data-counter>0</div>
                         </a>
                     </div>
                 </div>
@@ -47,23 +47,24 @@
         </div>
     </header>
     <main class="main">
-        <div class="container">
+        <div class="container" data-container>
             <div class="empty">
                 <img src="../img/svg/cart.svg" alt="Тележка" class="empty__img">
                 <div class="empty__text">Корзина пуста</div>
                 <div class="empty__subtitle">Но это никогда не поздно исправить :)</div>
                 <a href="../index.html" class="empty__link">В каталог товаров</a>
             </div>
+            <button class="btn-order">Заказать</button>
         </div>
     </main>
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
-                <a href="index.html" class="wrapper-img">
+                <a href="../index.html" class="wrapper-img">
                     <img src="../img/svg/logo.svg" alt="Лого" class="img">
                 </a>
                 <div class="footer__wrapper-menu">
-                    <nav class="../footer__nav">
+                    <nav class="footer__nav">
                         <ul class="footer__menu">
                             <li class="footer__item"><a href="#" class="footer__link">Избранное</a></li>
                             <li class="footer__item"><a href="pages/basket.html" class="footer__link">Корзина</a></li>
@@ -127,6 +128,8 @@
             </div>
         </div>
     </div>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="../js/script.js"></script>
+    <script defer src="../js/script-basket.js"></script>
 </body>
 </html>
