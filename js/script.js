@@ -1,3 +1,10 @@
+'use strict'
+
+//+ Счётчик корзины:
+const counter = document.querySelector('[data-counter]');
+
+updateCounter()
+
 //+ MODAL WINDOW:
 const authorization = document.querySelector('.header__authorization'),
       registration = document.querySelector('.header__registration'),
@@ -24,6 +31,12 @@ modal.forEach(modalWindow => {
         event.stopPropagation();
     });
 })
+
+//+ Функция для обновления счётчика корзины:
+function updateCounter() {
+    let products = JSON.parse(localStorage.getItem('products')) || [];
+    counter.innerHTML = `${products.length}`;
+}
 
 function showModalAuthorization() {
     clickArea2.classList.add('show');
