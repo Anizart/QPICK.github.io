@@ -21,9 +21,9 @@ const deleteCard = document.querySelectorAll('.cards__btn');
 deleteCard.forEach(btn => btn.addEventListener('click', (e) => {
     const itemIndex = parseInt(e.target.getAttribute('data-index'), 10); // Особенно тут...
 
-    document.querySelector('.cards').classList.add('fade-out');
+    // document.querySelector('.cards').classList.add('fade-out'); // это почемуто ломает
     
-    setTimeout(() => {
+    // setTimeout(() => {
         products.splice(itemIndex, 1);
         localStorage.setItem('products', JSON.stringify(products));
         
@@ -35,7 +35,7 @@ deleteCard.forEach(btn => btn.addEventListener('click', (e) => {
         }
 
         updateCounter();
-    }, 500);
+    // }, 500);
 }));
 
 //+ Загрузка карточек:
